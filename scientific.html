@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scientific Calculator</title>
+<script type="text/javascript">
+
+function resetfunction(calc)
+{
+calc.display.value=" ";
+}
+
+function cos_function()
+{
+calc.display.value+='Math.cos';
+}
+
+function sin_function()
+{
+calc.display.value+='Math.sin';
+}
+
+function log_function()
+{
+calc.display.value+='Math.log';
+}
+
+function sqrt_function()
+{
+calc.display.value+='Math.sqrt';
+}
+
+function fact(x)
+{
+factv=1;
+for(i=1;i<=x;i++)
+{
+factv=factv*i;
+}
+return factv;
+}
+
+function fact_function(x)
+{
+calc.display.value+='fact';
+}
+
+function evaluation(calc)
+{
+n=calc.display.value;
+result=eval(n);
+calc.display.value=result;
+}
+
+</script>
+
+</head>
+<body>
+
+<form id="form1" name="calc" >
+<input id="display" type="text" name="display" value=" "></br>
+
+<input class="button number" type="button" value="1" onclick="calc.display.value+=1" />
+<input class="button number" type="button" value="2" onclick="calc.display.value+=2" />
+<input class="button number" type="button" value="3" onclick="calc.display.value+=3" />
+<input class="button" type="button" value="e" onclick="calc.display.value+=2.718" />
+</br>
+
+<input class="button number" type="button" value="4" onclick="calc.display.value+=4" />
+<input class="button number" type="button" value="5" onclick="calc.display.value+=5" />
+<input class="button number" type="button" value="6" onclick="calc.display.value+=6" />
+<input class="button" type="button" value="pi" onclick="calc.display.value+=3.141" />
+</br>
+
+<input class="button number" type="button" value="7" onclick="calc.display.value+=7" />
+<input class="button number" type="button" value="8" onclick="calc.display.value+=8" />
+<input class="button number" type="button" value="9" onclick="calc.display.value+=9" />
+<input class="button number" type="button" value="0" onclick="calc.display.value+=0" />
+</br>
+
+<input class="button three" type="button" value="C" onclick="resetfunction(this.form)" />
+<input class="button" type="button" value="(" onclick="calc.display.value+='('" />
+<input class="button three" type="button" value="=" onclick="evaluation(this.form)" />
+</br>
+
+<input class="button op" type="button" value="-" onclick="calc.display.value+='-'" />
+<input class="button op" type="button" value="+" onclick="calc.display.value+='+'" />
+<input class="button op" type="button" value="*" onclick="calc.display.value+='*'" />
+<input class="button op" type="button" value="/" onclick="calc.display.value+='/'" />
+</br>
+
+<input class="button" type="button" value=")" onclick="calc.display.value+=')'" />
+<input class="button" type="button" value="cos" onclick="cos_function()" />
+<input class="button" type="button" value="sin" onclick="sin_function()" />
+<input class="button" type="button" value="n!" onclick="fact_function()" />
+</br>
+
+<input class="button op" type="button" value="." onclick="calc.display.value+='.'" />
+<input class="button" type="button" value="log" onclick="log_function()" />
+<input class="button" type="button" value="sqrt" onclick="sqrt_function()" />
+</br>
+
+</form>
+</body>
+
+</html>
